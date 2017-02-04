@@ -5,7 +5,8 @@ import os
 import sys
 
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lapsi.settings.dev")
+    env = os.environ.get('APP_ENV', 'dev')
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lapsi.settings." + env)
 
     from django.core.management import execute_from_command_line
 

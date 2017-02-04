@@ -15,7 +15,9 @@ services:
   web:
     image: snimavat/django:latest
     container_name: web
-    command: /bin/bash -c "python manage.py collectstatic --noinput --settings lapsi.settings.production && python manage.py makemigrations && python manage.py migrate && gunicorn lapsi.wsgi:application -b 0.0.0.0:8000"
+    command: /bin/bash -c "python manage.py collectstatic --noinput && python manage.py makemigrations && python manage.py migrate && gunicorn lapsi.wsgi:application -b 0.0.0.0:8000"
+    environment:
+     - APP_ENV=production
     volumes:
      - ./app:/app
      - ./static:/static
