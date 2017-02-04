@@ -1,0 +1,76 @@
+{% load static wagtailuserbar wagtailcore_tags lapsi %}
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>
+            {% block title %}
+                {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+            {% endblock %}
+            {% block title_suffix %}
+                {% with self.get_site.site_name as site_name %}
+                    {% if site_name %}- {{ site_name }}{% endif %}
+                {% endwith %}
+            {% endblock %}
+        </title>
+
+        <meta name="description" content="{% if self.search_description %}{{ self.search_description }}{% endif %}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {# Global stylesheets #}
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/lapsi.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+
+        {% block extra_css %}
+            {# Override this in templates to add extra stylesheets #}
+        {% endblock %}
+    </head>
+
+    <body class="{% block body_class %}{% endblock %}">
+        {% wagtailuserbar %}
+
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    {% get_site_root as site_root %}
+                    <div class="col-md-6">
+                        {% block menu %}
+                            {% top_menu parent=site_root calling_page=self %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="main {% block main_class %}{% endblock %}">
+            <div class="container">
+                 {% block body %}{% endblock %}
+            </div>
+        </div>
+
+        {% comment %}
+        <div class="footer {% block footer_class %}{% endblock %}">
+        <footer class="blog-footer">
+            Footer
+        </footer>
+        </div>
+        {% endcomment %}
+
+        {# Global javascript #}
+        <script type="text/javascript" src="{% static 'js/lapsi.js' %}"></script>
+
+        {% block extra_js %}
+            {# Override this in templates to add extra javascript #}
+        {% endblock %}
+    </body>
+</html>

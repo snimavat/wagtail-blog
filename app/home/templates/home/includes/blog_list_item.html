@@ -1,0 +1,15 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% for blog in blogs %}
+    <div class="blog-post">
+
+      <a href="{% pageurl blog %}">
+        <h2 class="blog-post-title">{{blog.title}}</h2>
+      </a>
+      {% if blog.intro %}
+        <p>{{ blog.intro | richtext }}</p>
+      {% endif %}
+    </div>
+{% empty %}
+    No blogs found
+{% endfor %}

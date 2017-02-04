@@ -1,0 +1,30 @@
+
+body {
+font-family: 'Roboto', sans-serif;
+}
+
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+pre.prettyprint {
+    width: auto;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    max-width: 100%;
+    padding: 20px;
+}
+
+code {
+ white-space: pre !important;
+}
