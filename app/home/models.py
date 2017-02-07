@@ -6,7 +6,6 @@ from django.db import models
 from modelcluster.fields import ParentalKey
 from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel
 from wagtail.wagtailcore.blocks import StreamBlock, CharBlock, RichTextBlock, FieldBlock, StructBlock, RawHTMLBlock, PageChooserBlock, ChoiceBlock
-from wagtail.wagtailcore.blocks import TextBlock
 from wagtail.wagtailcore.fields import StreamField, RichTextField
 from wagtail.wagtailcore.models import Orderable
 from wagtail.wagtailcore.models import Page
@@ -229,3 +228,16 @@ BlogPage.content_panels = [
 ]
 
 BlogPage.promote_panels = Page.promote_panels
+
+
+class RegularPage(Page):
+    intro = RichTextField(blank=True)
+    body = StreamField(FlexiStreamBlock())
+
+    content_panels = [
+        FieldPanel("title", classname="full title"),
+        FieldPanel("intro", classname="full"),
+        StreamFieldPanel('body')
+    ]
+
+RegularPage.promote_panels = Page.promote_panels

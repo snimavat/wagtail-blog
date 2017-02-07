@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block body %}
+    {% if self.body %}
+        <div class="body-content">
+            {% include "home/includes/streamfield.html" with content=self.body %}
+        </div>
+    {% endif %}
+{% endblock %}

@@ -4,8 +4,8 @@ services:
   db:
     image: mysql:latest
     container_name: mysql
-    ports:
-      - "3306:3306"
+    expose:
+      - "3306"
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=lapsi
@@ -13,7 +13,7 @@ services:
       - "./db:/var/lib/mysql"
 
   web:
-    image: snimavat/django:latest
+    image: snimavat/wagtail:latest
     container_name: web
     command: /bin/bash -c "python manage.py collectstatic --noinput && python manage.py makemigrations && python manage.py migrate && gunicorn lapsi.wsgi:application -b 0.0.0.0:8000"
     environment:
