@@ -45,146 +45,55 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+.top-bar {
+    padding:5px 0 0 0;
+    background: #aaa;
+}
+
+.top-bar ul {
+    padding-left: 0;
+    list-style: none;
+    color: #fff;
+}
+
+.top-bar ul li {
+    display: inline-block;
+    padding-right:20px;
+}
+
+
+.top-bar a {
+    color: #fff
+}
+
+.top-bar a:hover {
+    color: #fff;
+}
+    </style>
+
 </head>
 
 <body data-spy="scroll" data-target="#main-navbar">
 
-    <!-- Preloader -->
-    <!--
-    <div class="loader bg-white">
-        <div class="loader-inner ball-scale-ripple-multiple vh-center">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-    -->
-
     <div class="main-container" id="page">
 
-        
-        
-        
 
-
-
-
-
-
-    <!-- =========================
-           CONTENT SECTION
-        ============================== -->
-        <!-- =========================
-           COURSES
-        ============================== -->
-        <!-- =========================
-           PORTFOLIO
-        ============================== -->
-        <!-- =========================
-             CONTACT FORM
-        ============================== -->
-        <!-- =========================
-             FOOTER
-        ============================== -->
-        <!-- =========================
-           FEATURES SECTION 
-        ============================== -->
-        <!-- =========================
-           FEATURES SECTION 
-        ============================== -->
-        <!-- =========================
-           SOCIAL WIDGET
-        ============================== -->
-        <!-- =============================
-             SUBSCRIPTION
-        ============================== -->
-        <!-- =========================
-           FEATURES SECTION 
-        ============================== -->
-        <!-- =============================
-             SUBSCRIPTION
-        ============================== -->
-        <!-- =========================
-           FEATURES SECTION 
-        ============================== -->
-        <!-- =========================
-           FEATURES SECTION 
-        ============================== -->
-        <!-- =============================
-             SUBSCRIPTION
-        ============================== -->
-        <!-- =========================
-           FEATURES SECTION 
-        ============================== -->
-        <!-- =============================
-             SUBSCRIPTION
-        ============================== -->
-        <!-- =========================
-           FEATURES SECTION 
-        ============================== -->
-        <!-- =============================
-             SUBSCRIPTION
-        ============================== -->
-        <!-- =========================
-           FEATURES SECTION 
-        ============================== -->
-        <!-- =============================
-             SUBSCRIPTION
-        ============================== -->
-        <!-- =========================
-           FEATURES SECTION 
-        ============================== -->
-        <!-- =============================
-             SUBSCRIPTION
-        ============================== -->
-        <!-- =========================
-           FEATURES SECTION 
-        ============================== -->
-        <!-- =============================
-             SUBSCRIPTION
-        ============================== -->
-        <!-- =========================
-           SOCIAL WIDGET
-        ============================== -->
-        <!-- =========================
-           FEATURES SECTION 
-        ============================== -->
-        <!-- =============================
-             SUBSCRIPTION
-        ============================== -->
-        <!-- =========================
-             FOOTER
-        ============================== -->
-        <!-- =========================
-           FEATURES SECTION 
-        ============================== -->
-        <!-- =============================
-             SUBSCRIPTION
-        ============================== -->
-        <!-- =========================
-             FOOTER
-        ============================== -->
-        <!-- =========================
-           FEATURES SECTION 
-        ============================== -->
-        <!-- =============================
-             SUBSCRIPTION
-        ============================== -->
-        <!-- =========================
-           FEATURES SECTION 
-        ============================== -->
-        <!-- =============================
-             SUBSCRIPTION
-        ============================== -->
-        <!-- =========================
-           FEATURES SECTION 
-        ============================== -->
-        <!-- =========================
-             PARTNERS
-        ============================== -->
-        <!-- =============================
-             SUBSCRIPTION
-        ============================== -->
+        <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    {% get_site_root as site_root %}
+                    <div class="col-md-6"></div>
+                    <div class="col-md-4 text-right">
+                        {% block menu %}
+                            {% top_menu parent=site_root calling_page=self %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        </header>
         <!-- =========================
            FEATURES SECTION 
         ============================== -->
@@ -196,7 +105,7 @@
                     <div class="col-md-8 col-md-offset-2">
                         <div class="section-header text-center text-white">
                             <h2>I develop beautiful web applications</h2>
-                            <p class="lead">I use the right tools to deliver the best within your budget and deadline</p>    
+                            <p class="lead">Using the right tools to deliver the best within your budget and deadline</p>
                         </div>
                     </div>
                 </div>
@@ -204,7 +113,7 @@
                 <div class="row features-block c2 text-white">
                     <!-- Features Item -->
                     <div class="col-sm-6 icon-left clearfix"> 
-                        <i class="icon-target2"></i>
+                        <i class="icon-tools-2"></i>
                         <h5 class="m-t f-w-900">Technology and tools selection</h5>
                         <p>Choosing the right tools is the first step toward a successful project.<br>
 By utilizing my experience with with different technologies over last 10 years, I can help you choose the right tools to deliver the best within your budget
@@ -212,7 +121,7 @@ By utilizing my experience with with different technologies over last 10 years, 
                     </div>
                     <!-- Features Item -->
                     <div class="col-sm-6 icon-left clearfix"> 
-                        <i class="icon-wallet2"></i>
+                        <i class="icon-way"></i>
                         <h5 class="m-t f-w-900">Project estimation</h5>
                         <p>I can help you If you are in a project planning phase and looking for an independent estimation.</p>
                     </div>
@@ -221,13 +130,13 @@ By utilizing my experience with with different technologies over last 10 years, 
                 <div class="row features-block new-row-sm c2 text-white">
                     <!-- Features Item -->
                     <div class="col-sm-6 icon-left clearfix"> 
-                        <i class="icon-linegraph"></i>
+                        <i class="icon-rocket"></i>
                         <h5 class="m-t f-w-900">Web and API development</h5>
                         <p>If you are planning to outsource your project, I can help with end to end project implementation.</p>
                     </div>
                     <!-- Features Item -->
                     <div class="col-sm-6 icon-left clearfix"> 
-                        <i class="icon-chat3"></i>
+                        <i class="icon-help2"></i>
                         <h5 class="m-t f-w-900">Project maintenance</h5>
                         <p>If You have existing product or website that needs to be maintained or enhanced, I can provide you technical support and help with implementing new features.</p>
                     </div>
@@ -242,7 +151,9 @@ By utilizing my experience with with different technologies over last 10 years, 
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1 y-middle c2">
                         <div class="col-md-6 center-md">
-                            <h2 class="f-w-900 wow zoomIn" style="visibility: visible; animation-name: zoomIn;">Turn your project into a success story</h2>
+                            <h2 class="f-w-900 wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
+                               Turn your project into a success story <i class="icon-target2"></i>
+                            </h2>
                             
                             <p class="m-t-md">If you would like to talk about your project just send me a mail and i would be happy to discuss and help as much as i can. You dont need a credit card for this :)</p>
                         </div>
