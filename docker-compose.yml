@@ -13,9 +13,9 @@ services:
       - "./db:/var/lib/mysql"
 
   web:
-    image: snimavat/wagtail:latest
+    image: snimavat/wagtail:alpine
     container_name: web
-    command: /bin/bash -c "python manage.py collectstatic --noinput && python manage.py makemigrations && python manage.py migrate && gunicorn lapsi.wsgi:application -b 0.0.0.0:8000"
+    command: /bin/sh -c "python manage.py collectstatic --noinput && python manage.py makemigrations && python manage.py migrate && gunicorn lapsi.wsgi:application -b 0.0.0.0:8000"
     environment:
      - APP_ENV=production
     volumes:
